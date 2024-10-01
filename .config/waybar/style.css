@@ -7,18 +7,15 @@ window#waybar {
 
 .modules-left, .modules-center {
     opacity: 1;
-    border-radius: 0.5rem;
     padding: .4rem;
 }
 
 .modules-right {
     opacity: 1;
-    border-radius: 0.5rem;
     padding: .4rem;
 }
 
 #workspaces {
-    border-radius: 0.5rem;
     padding: 0 2px;
 }
 
@@ -33,27 +30,20 @@ window#waybar {
 }
 
 #window {
-    border-radius: 0.5rem;
     padding: 2px 5px;
 }
 
 #battery,
 #cpu,
 #memory,
-#network {
+#network,
+#pulseaudio,
+#disk,
+#temperature {
     padding: 0 .3rem 0 0;
 }
 
 #clock {
     font-weight: bolder;
-    border-radius: 0.5rem;
     padding: 0 .3rem 0 0;
-}
-
-#disk {
-    color: lightskyblue;
-}
-
-#temperature {
-    color: lightslategray;
 }
