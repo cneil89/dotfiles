@@ -20,18 +20,19 @@ vim.filetype.add({
     },
 })
 
-local NilocGroup = vim.api.nvim_create_augroup("NilocGroup", { clear = true })
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = "*",
-    group = NilocGroup,
-    callback = function()
-        vim.lsp.buf.format()
-    end,
-})
+-- local NilocGroup = vim.api.nvim_create_augroup("NilocGroup", { clear = true })
+-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+--     pattern = "*",
+--     group = NilocGroup,
+--     callback = function()
+--         vim.lsp.buf.format()
+--     end,
+-- })
 
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+    desc = 'Highlight when yanking (copyinng) text',
     pattern = "*",
-    group = NilocGroup,
+    group = vim.api.nvim_create_augroup('niloc-highlight-yank', { clear = true }),
     callback = function()
         vim.highlight.on_yank()
     end,
