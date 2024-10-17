@@ -11,8 +11,8 @@ return {
 			bright_border = true,
 			reduced_blue = true,
 			cursorline = {
-				theme = "dark",
-				blend = 0.55,
+				theme = "light",
+				blend = 0.75,
 			},
 		})
 
