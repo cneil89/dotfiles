@@ -26,7 +26,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: rgba(42, 255, 0, 1);
+    color: rgba(208, 135, 112, 1);
 }
 
 #window {

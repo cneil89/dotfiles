@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias go="grc go"
 
 export PATH=$HOME/go/bin:$PATH
 export HYPRSHOT_DIR=$HOME/Pictures

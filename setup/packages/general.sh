@@ -25,4 +25,5 @@ packagesPacman=(
     "nwg-displays"
     "firefox"
     "flatpak"
+    "grc"
 );
