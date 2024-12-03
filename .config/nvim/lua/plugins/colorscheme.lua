@@ -12,11 +12,12 @@ return {
 			reduced_blue = true,
 			cursorline = {
 				theme = "light",
-				blend = 0.75,
+				blend = 0.8,
 			},
 		})
 
 		vim.cmd.colorscheme("nordic")
+		vim.api.nvim_set_hl(0, "Visual", { bg = "#417372" })
 	end,
 }
 
