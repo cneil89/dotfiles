@@ -20,7 +20,10 @@ return {
 			handlers = {
 				function(server_name)
 					lspconfig[server_name].setup({
-						on_attach = on_attach,
+						on_attach = function(client)
+							client.server_capabilities.documentFormattingProvider = false
+							client.server_capabilities.documentRangeFormattingProvider = false
+						end,
 						capabilities = capabilities,
 					})
 				end,
@@ -39,7 +42,7 @@ return {
 			settings = {
 				Lua = {
 					diagnostics = {
-						globals = { "vim" },
+						globals = { "vim", "on_attach", "capabilities" },
 					},
 				},
 			},

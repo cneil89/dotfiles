@@ -1,8 +1,8 @@
 {
     "layer": "top",
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": [],
-    "modules-right": ["cpu","memory","network","battery", "pulseaudio", "clock"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray","cpu","memory","battery","bluetooth", "pulseaudio"],
     "spacing": 10,
     "hyprland/window": {
         "format": "{}",
@@ -13,21 +13,43 @@
         "separate-outputs": true
     },
     "battery": {
-        "format": "{time} {icon} ",
+        "format": "{capacity}% {icon}",
         "format-icons": [" ", " ", " ", " ", " "],
         "format-time": "{H}h {M}m",
-        "tooltip-format": "{capacity}%"
+        "tooltip-format": "{time}"
     },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "clock": {
+        "format-alt": " {:%H:%M}",
+        "format": "{:%A, %B %d, %Y (%R)}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-scroll-up": "tz_up",
+                    "on-scroll-down": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
     "memory": {
         "interval": 30,
-        "format": "{used:0.1f}G/{total:0.1f}G  "
+        "format": " {used:0.1f}G/{total:0.1f}G"
     },
     "cpu": {
         "interval": 10,
-        "format": "{}%  ",
+        "format": " {}%",
         "max-length": 10
     },
     "network": {
@@ -61,5 +83,17 @@
         "scroll-step": 1,
         "on-click": "pavucontrol",
         "ignored-sinks": ["Easy Effects Sink"]
-    }
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+     "bluetooth": {
+        "format-on": "󰂯",
+        "format-off": "󰂲 ",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": "󰂱 {num_connections}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
 }

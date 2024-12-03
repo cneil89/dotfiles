@@ -8,7 +8,10 @@ return {
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.gofmt,
 				null_ls.builtins.formatting.goimports,
-				null_ls.builtins.formatting.prettierd,
+				null_ls.builtins.formatting.cmake_format,
+				null_ls.builtins.formatting.clang_format.with({
+					extra_args = "--style=Microsoft",
+				}),
 				-- null_ls.builtins.formatting.templ,
 				-- null_ls.builtins.formatting.sqlfluff.with({
 				-- 	extra_args = { "--dialect", "postgres" },
