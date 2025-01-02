@@ -1,25 +1,36 @@
 return {
-	"AlexvZyl/nordic.nvim",
+	"folke/tokyonight.nvim",
 	lazy = false,
 	priority = 1000,
+	opts = {},
 	config = function()
-		require("nordic").load()
-		require("nordic").setup({
-			transparent = {
-				bg = false,
-			},
-			bright_border = true,
-			reduced_blue = true,
-			cursorline = {
-				theme = "light",
-				blend = 0.8,
-			},
-		})
-
-		vim.cmd.colorscheme("nordic")
+		vim.cmd.colorscheme("tokyonight")
 		vim.api.nvim_set_hl(0, "Visual", { bg = "#417372" })
 	end,
 }
+
+-- return {
+-- 	"AlexvZyl/nordic.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("nordic").load()
+-- 		require("nordic").setup({
+-- 			transparent = {
+-- 				bg = false,
+-- 			},
+-- 			bright_border = true,
+-- 			reduced_blue = true,
+-- 			cursorline = {
+-- 				theme = "light",
+-- 				blend = 0.8,
+-- 			},
+-- 		})
+--
+-- 		vim.cmd.colorscheme("nordic")
+-- 		vim.api.nvim_set_hl(0, "Visual", { bg = "#417372" })
+-- 	end,
+-- }
 
 -- return {
 --     "rebelot/kanagawa.nvim",

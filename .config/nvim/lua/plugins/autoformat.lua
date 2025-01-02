@@ -34,7 +34,7 @@ return {
 		},
 		formatters = {
 			clang_format = {
-				prepend_args = { "--style=file", "--fallback-style=WebKit" },
+				prepend_args = { "--style=file", "--fallback-style=webkit" },
 			},
 		},
 	},

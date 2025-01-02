@@ -107,8 +107,11 @@ alias go="grc go"
 export PATH=$HOME/go/bin:$PATH
 export HYPRSHOT_DIR=$HOME/Pictures
 
-export C=clang
-export CXX=clang++
+# export C=clang
+# export CXX=clang++
+
+export C=gcc
+export CXX=g++
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
