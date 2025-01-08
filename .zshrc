@@ -112,6 +112,7 @@ export HYPRSHOT_DIR=$HOME/Pictures
 
 export C=gcc
 export CXX=g++
+export CMAKE_GENERATOR="Ninja Multi-Config"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
