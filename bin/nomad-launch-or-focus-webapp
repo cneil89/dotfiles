@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if (($# == 0)); then
+    echo "Usage: nomad-launch-or-focus-webapp [window-pattern] [url]"
+    exit 1
+fi
+
+
+exec nomad-launch-or-focus "$1" "nomad-launch-webapp '$2'"

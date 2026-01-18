@@ -1,0 +1,26 @@
+#!/bin/bash
+
+NUMBER_MONITORS=$(hyprctl monitors all | grep "^Monitor [a-zA-Z]*-[0-9] (ID [0-9]):" | wc -l)
+LAPTOP_DISABLED=$(hyprctl monitors all | awk '$1=="Monitor" {mon=$2} mon=="eDP-1" && /disabled/ {print $NF}')
+LID_STATE=$(cat /proc/acpi/button/lid/LID0/state | cut -d ":" -f2 | sed 's/ *//')
+LID_MONITOR="eDP-1,3840x2400@59.99,278x1440,2.0"
+
+# lid is closed?
+if [ "$LID_STATE" = "closed" ]; then
+    # is docked?
+    if [ $NUMBER_MONITORS -gt 1 ]; then
+        # check if laptop screen is disabled (true = disabled)
+        if [ "$LAPTOP_DISABLED" = "false" ]; then
+            hyprctl keyword monitor "eDP-1,disable"
+        fi
+    fi
+elif [ "$LID_STATE" = "open" ]; then
+    # is docked?
+    if [ $NUMBER_MONITORS -gt 1 ]; then
+        if [ "$LAPTOP_DISABLED" = "true" ]; then
+            hyprctl keyword monitor "$LID_MONITOR"
+        fi
+    fi
+else
+    hyprctl keyword monitor "$LID_MONITOR"
+fi

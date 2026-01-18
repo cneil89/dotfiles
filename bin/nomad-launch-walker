@@ -1,0 +1,46 @@
+#!/bin/bash
+
+
+# dbus-update-activation-environment --systemd --all 2>/dev/null || true
+# # Ensure elephant is running before launching walker
+# if ! pgrep -x elephant > /dev/null; then
+#   setsid uwsm-app -- elephant &
+# fi
+#
+# # Ensure walker service is running
+# if ! pgrep -f "walker --gapplication-service" > /dev/null; then
+#   setsid uwsm-app -- walker --gapplication-service &
+# fi
+#
+# exec walker --width 644 --maxheight 300 --minheight 300 "$@"
+#
+#
+#
+
+#!/bin/bash
+set -euo pipefail
+
+# Export DBus env in case Hyprland launched from tty
+dbus-update-activation-environment --systemd --all 2>/dev/null || true
+
+# Start Elephant first and wait until its DBus name appears
+if ! pgrep -x elephant >/dev/null; then
+  setsid uwsm-app -- elephant &
+  for i in {1..20}; do
+    gdbus introspect --session --dest dev.serebit.Elephant --object-path /dev/serebit/Elephant >/dev/null 2>&1 && break
+    sleep 0.1
+  done
+fi
+
+# Start Walker service next and wait for its DBus name
+if ! pgrep -f "walker --gapplication-service" >/dev/null; then
+  setsid uwsm-app -- walker --gapplication-service &
+  for i in {1..20}; do
+    gdbus introspect --session --dest dev.serebit.Walker --object-path /dev/serebit/Walker >/dev/null 2>&1 && break
+    sleep 0.1
+  done
+fi
+
+# Finally run the UI instance
+exec walker --width 644 --maxheight 300 --minheight 300 "$@"
+

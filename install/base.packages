@@ -1,0 +1,155 @@
+# Core package list installed via install/packages.sh
+# This file is also used by the ISO builder when determining needs
+
+# --- Password Management ---
+1password                  # GUI password manager
+1password-cli              # CLI for 1Password
+
+# --- Terminal & Shell Tools ---
+bash-completion            # Tab completion for bash
+bat                        # cat replacement with syntax highlighting
+btop                       # Modern system resource monitor
+cargo                      # Rust package manager and build tool
+clang                      # C/C++ compiler
+dust                       # du alternative with better visualization
+eza                        # Modern replacement for ls
+fd                         # Fast alternative to find
+fzf                        # Command-line fuzzy finder
+ghostty                    # GPU-accelerated terminal emulator for Wayland
+gopls                      # Go language server for IDE/editor integration
+lua-language-server
+go-task                    # Task runner similar to makefile
+grc
+jq                         # JSON parser and query tool
+wget
+less                       # Pager for viewing text output
+ripgrep                    # Fast search tool like grep
+starship                   # Cross-shell prompt
+tldr                       # Simplified man pages
+tmux
+tree-sitter-cli            # CLI for syntax tree parsing
+zoxide                     # Smarter cd command for fast navigation
+
+# --- Network & Connectivity ---
+avahi                      # Zeroconf/Bonjour service discovery
+cups                       # Printing system
+cups-browsed               # CUPS network printer discovery
+cups-filters               # Print data filters for CUPS
+cups-pdf                   # Virtual PDF printer
+gvfs-mtp                   # MTP device integration (Android)
+gvfs-smb                   # SMB/CIFS network share integration
+iwd                        # Wireless daemon for Linux
+inetutils                  # Basic networking utilities (ping, ifconfig)
+nss-mdns                   # Multicast DNS support (Avahi)
+ufw                        # Uncomplicated Firewall frontend
+ufw-docker                 # UFW rules for Docker containers
+whois                      # Domain lookup utility
+wireless-regdb             # Regulatory database for wireless devices
+
+# --- Bluetooth & Power ---
+blueberry                  # Bluetooth manager for BlueZ
+brightnessctl              # Brightness control for displays
+power-profiles-daemon      # Power management and profile service
+
+# --- Fonts & Themes ---
+fontconfig                 # Font configuration and discovery
+noto-fonts                 # Standard Noto font family
+noto-fonts-cjk             # CJK (Chinese, Japanese, Korean) fonts
+noto-fonts-emoji           # Noto emoji font
+noto-fonts-extra           # Additional Noto font sets
+ttf-cascadia-mono-nerd     # Cascadia Mono with Nerd Font glyphs
+ttf-ia-writer              # iA Writer typeface
+ttf-jetbrains-mono-nerd    # JetBrains Mono with Nerd Font glyphs
+woff2-font-awesome         # Font Awesome webfont
+ttf-font-awesome           # Font Awesome font
+adwaita-icon-theme 
+gnome-themes-extra         # GTK themes for GNOME-based apps
+kvantum-qt5                # Qt5 SVG-based theme engine
+
+# --- Desktop Environment & Hyprland ---
+hypridle                   # Idle daemon for Hyprland
+hyprland                   # Wayland compositor
+hyprland-qtutils           # Qt integration utilities for Hyprland
+hyprlock                   # Screen locker for Hyprland
+hyprpicker                 # Color picker for Hyprland
+hyprshot                   # Screenshot utility for Hyprland
+hyprsunset                 # Night light (blue light filter)
+mako                       # Wayland notification daemon
+polkit-gnome               # PolicyKit authentication agent
+qt5-wayland                # Wayland support for Qt5 apps
+swaybg                     # Wallpaper utility for Wayland
+swayosd                    # On-screen display (volume/brightness)
+waybar                     # Status bar for Wayland compositors
+xdg-desktop-portal-gtk     # XDG portal backend for GTK apps
+xdg-desktop-portal-hyprland# XDG portal backend for Hyprland
+uwsm                       # User Wayland session manager
+wiremix                    # Audio mixer for WirePlumber/PipeWire
+wireplumber                # PipeWire session manager
+wl-clip-persist            # Persistent clipboard for Wayland
+wl-clipboard               # Wayland clipboard utilities
+wl-screenrec               # Wayland screen recorder
+wf-recorder                # Wayland screen capture tool
+impala                     # Network TUI and diagnostics tool
+
+# --- Development & Programming ---
+llvm                       # Compiler infrastructure and toolchain
+libyaml                    # YAML parsing library
+python-gobject             # Python bindings for GObject
+python-poetry-core         # Core library for Python packaging
+mise                       # Environment/version manager (like asdf)
+luarocks                   # Lua package manager
+lazygit                    # Terminal UI for git
+lazydocker                 # Terminal UI for docker
+github-cli                 # CLI for GitHub
+docker                     # Container engine
+docker-buildx              # Docker plugin for multi-architecture builds
+docker-compose             # Compose tool for Docker
+postgresql-libs            # PostgreSQL client libraries
+mariadb-libs               # MariaDB/MySQL client libraries
+
+# --- Graphics & Vulkan Support ---
+vulkan-headers             # Vulkan API headers for building Vulkan applications
+vulkan-icd-loader          # Vulkan driver loader for managing GPU ICDs
+vulkan-tools               # Vulkan utility tools (vulkaninfo, debugging, testing)
+
+# --- Applications ---
+gnome-calculator           # Calculator app
+evince                     # PDF/document viewer
+imv                        # Image viewer
+imagemagick                # Image conversion and editing tools
+kdenlive                   # Video editor
+localsend                  # Cross-platform file transfer app
+mpv                        # Media player
+obs-studio                 # Video recording/streaming
+chromium                   # Browser
+pamixer                    # PulseAudio/ALSA volume control
+playerctl                  # MPRIS media controller
+plocate                    # Faster locate command
+plymouth                   # Boot splash screen system
+satty                      # Screenshot annotation tool
+signal-desktop             # Encrypted messaging app
+spotify                    # Music streaming app
+sushi                      # Quick file previewer for GNOME
+system-config-printer      # GUI printer configuration
+tzupdate                   # Sync system timezone via IP geolocation
+unzip                      # ZIP extraction tool
+
+# --- Input & Localization ---
+fcitx5                     # Input method framework
+fcitx5-gtk                 # GTK integration for fcitx5
+fcitx5-qt                  # Qt integration for fcitx5
+
+# --- Utilities & Tools ---
+fastfetch                   # Neofetch-like system info tool
+gnome-keyring               # Secret storage and credentials manager
+gum                         # Interactive shell UI toolkit
+libqalculate                # Command-line calculator library
+man-db                         # Manual page viewer
+nautilus                    # GNOME file manager
+polkit-gnome                # Authentication dialogs for elevated actions
+system-config-printer       # Printer management utility
+yay                         # AUR helper for package management
+xmlstarlet                  # XML command-line processor  
+stow                        # Symlink manager for dotfiles and package-style configuration
+wofi
+
