@@ -87,11 +87,11 @@
     },
     "memory": {
         "interval": 10,
-        "format": "  {used:0.1f}G/{total:0.1f}G"
+        "format": " {used:0.1f}G/{total:0.1f}G"
     },
     "cpu": {
         "interval": 10,
-        "format": "  {:4.1f}%",
+        "format": " {:4.1f}%",
         "on-click": "ghostty -e btop"
     },
     "network": {

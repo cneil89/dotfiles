@@ -22,6 +22,7 @@ go-task                    # Task runner similar to makefile
 grc
 jq                         # JSON parser and query tool
 wget
+neovim
 less                       # Pager for viewing text output
 ripgrep                    # Fast search tool like grep
 starship                   # Cross-shell prompt
