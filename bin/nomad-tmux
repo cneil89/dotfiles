@@ -53,9 +53,9 @@ main() {
     # if session does not exist, create new one
     if ! tmux has-session -t $session 2>/dev/null; then
         tmux new-session -d -s $session -c $dir
+        session_setup "$session" "$dir"
     fi
 
-    session_setup "$session" "$dir"
 
     tmux select-window -t $session:1.0
 

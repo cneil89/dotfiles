@@ -25,6 +25,8 @@ ls() {
     fi
 }
 
+alias t='nomad-tmux'
+
 alias go="grc go"
 alias lsa='ls -a'
 # alias ls='eza -lh --group-directories-first --icons=auto'
