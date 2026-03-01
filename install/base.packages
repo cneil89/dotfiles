@@ -8,6 +8,7 @@
 # --- Terminal & Shell Tools ---
 bash-completion            # Tab completion for bash
 bat                        # cat replacement with syntax highlighting
+tree
 btop                       # Modern system resource monitor
 cargo                      # Rust package manager and build tool
 clang                      # C/C++ compiler
@@ -107,6 +108,7 @@ docker-buildx              # Docker plugin for multi-architecture builds
 docker-compose             # Compose tool for Docker
 postgresql-libs            # PostgreSQL client libraries
 mariadb-libs               # MariaDB/MySQL client libraries
+base-devel
 
 # --- Graphics & Vulkan Support ---
 vulkan-headers             # Vulkan API headers for building Vulkan applications

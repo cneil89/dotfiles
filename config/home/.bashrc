@@ -77,7 +77,7 @@ export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
 
-export PATH=/mnt/dotfiles/bin:$HOME/go/bin:$PATH
+export PATH=$HOME/dev/dotfiles/bin:$HOME/go/bin:$PATH
 export HYPRSHOT_DIR=$HOME/Pictures
    
 

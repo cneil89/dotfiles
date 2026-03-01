@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+PROJECTS_ROOT="$HOME/dev"
+
+have() { command -v "$1" >/dev/null 2>&1; }
+
+pick_project() {
+    fd . $PROJECTS_ROOT --exact-depth 1 -t d \
+        | sort -u \
+        | fzf --prompt="Project > "
+}
+
+session_name_from_path() {
+    local p="$1"
+    #Use repo folder name, plus a short hash to avoid collisions
+    local base hash
+    base="$(basename "$p")"
+    printf "%s" "$base"
+}
+
+session_setup() {
+    local session="$1"
+    local dir="$2"
+
+    # Window 1: nvim
+    tmux rename-window -t $session:1 neovim
+    tmux send-keys -t $session:1 'nvim .' C-m ' sf'
+
+    tmux new-window -t $session -n git -c $dir
+    tmux send-keys -t $session:2 'lazygit' C-m
+
+    # Window X: air auto-start server
+    # tmux new-window -t $session -n dev -c $DIR
+    # tmux send-keys -t $session:1 'air' C-m
+    # tmux split-window -h -t $session:1
+    # tmux send-keys -t $session:1.1 'opencode' C-m
+}
+
+main() {
+    have fd || { echo "fd is required"; exit 1; }
+    have fzf || { echo "fzf is required"; exit 1; }
+    have tmux || { echo "tmux is required"; exit 1; }
+
+    local dir
+    dir="$(pick_project || true)"
+    [ -n "${dir:-}" ] || exit 0
+
+    local session
+    session="$(session_name_from_path "$dir")"
+
+    # if session does not exist, create new one
+    if ! tmux has-session -t $session 2>/dev/null; then
+        tmux new-session -d -s $session -c $dir
+    fi
+
+    session_setup "$session" "$dir"
+
+    tmux select-window -t $session:1.0
+
+    if [ -n "${TMUX:-}" ]; then
+        tmux switch-client -t $session
+    else
+        tmux attach -t $session
+    fi
+}
+
+
+main "$@"
+
+
