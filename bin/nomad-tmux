@@ -28,6 +28,7 @@ session_setup() {
     tmux rename-window -t $session:1 neovim
     tmux send-keys -t $session:1 'nvim .' C-m ' sf'
 
+    # Window 2: LazyGit
     tmux new-window -t $session -n git -c $dir
     tmux send-keys -t $session:2 'lazygit' C-m
 

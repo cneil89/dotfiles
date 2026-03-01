@@ -24,6 +24,7 @@ grc
 jq                         # JSON parser and query tool
 wget
 neovim
+opencode
 less                       # Pager for viewing text output
 ripgrep                    # Fast search tool like grep
 starship                   # Cross-shell prompt
