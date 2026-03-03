@@ -15,7 +15,7 @@ pick_project() {
 session_name_from_path() {
     local p="$1"
     #Use repo folder name, plus a short hash to avoid collisions
-    local base hash
+    local base
     base="$(basename "$p")"
     printf "%s" "$base"
 }
@@ -27,16 +27,12 @@ session_setup() {
     # Window 1: nvim
     tmux rename-window -t $session:1 neovim
     tmux send-keys -t $session:1 'nvim .' C-m ' sf'
-
+    tmux split-window -h -p 25 -t $session:1
+    tmux send-keys -t $session:1.1 'opencode' C-m
+     
     # Window 2: LazyGit
     tmux new-window -t $session -n git -c $dir
     tmux send-keys -t $session:2 'lazygit' C-m
-
-    # Window X: air auto-start server
-    # tmux new-window -t $session -n dev -c $DIR
-    # tmux send-keys -t $session:1 'air' C-m
-    # tmux split-window -h -t $session:1
-    # tmux send-keys -t $session:1.1 'opencode' C-m
 }
 
 main() {
@@ -59,6 +55,7 @@ main() {
 
 
     tmux select-window -t $session:1.0
+    tmux select-pane -t $session:1.0
 
     if [ -n "${TMUX:-}" ]; then
         tmux switch-client -t $session

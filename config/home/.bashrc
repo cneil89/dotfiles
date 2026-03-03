@@ -25,7 +25,7 @@ ls() {
     fi
 }
 
-alias t='nomad-tmux'
+alias t='nomad-tmux-sessionizer'
 
 alias go="grc go"
 alias lsa='ls -a'
