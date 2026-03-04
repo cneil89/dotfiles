@@ -10,7 +10,7 @@ if [[ ! -v BASH_COMPLETION_VERSINFO && -f /usr/share/bash-completion/bash_comple
 fi
  
 # Set Complete path
-export PATH="$HOME/.local/bin:$PATH"
+export PATH=$PATH
 set +h
 
 # Example aliases
@@ -25,7 +25,8 @@ ls() {
     fi
 }
 
-alias t='nomad-tmux-sessionizer'
+alias t="nomad-tmux-sessionizer"
+alias ta="tmux attach"
 
 alias go="grc go"
 alias lsa='ls -a'
@@ -79,9 +80,7 @@ export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
 
-export PATH=$HOME/dev/dotfiles/bin:$HOME/go/bin:$PATH
 export HYPRSHOT_DIR=$HOME/Pictures
-   
 
 export C=clang
 export CXX=clang++
@@ -98,3 +97,5 @@ pgdev() {
 
 }
 export GREENLIGHT_DB_DSN="postgres://greenlight:pa55word@localhost:5432/greenlight?sslmode=disable"
+
+fastfetch

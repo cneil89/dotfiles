@@ -8,7 +8,6 @@
 # --- Terminal & Shell Tools ---
 bash-completion            # Tab completion for bash
 bat                        # cat replacement with syntax highlighting
-tree
 btop                       # Modern system resource monitor
 cargo                      # Rust package manager and build tool
 clang                      # C/C++ compiler
