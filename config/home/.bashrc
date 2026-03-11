@@ -10,12 +10,8 @@ if [[ ! -v BASH_COMPLETION_VERSINFO && -f /usr/share/bash-completion/bash_comple
 fi
  
 # Set Complete path
-export PATH="$HOME/.local/bin:$PATH"
+export PATH=${HOME}/.local/bin:${HOME}/dev/dotfiles/bin:${HOME}/go/bin:$PATH
 set +h
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ls() {
     if [[ "$*" == "-ltr" ]]; then
@@ -26,8 +22,9 @@ ls() {
 }
 
 alias t='nomad-tmux-sessionizer'
+alias ta='tmux attach'
 
-alias go="grc go"
+alias go='grc go'
 alias lsa='ls -a'
 # alias ls='eza -lh --group-directories-first --icons=auto'
 alias lt='eza --tree --level=2 --long --icons --git'
@@ -79,7 +76,6 @@ export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
 
-export PATH=$HOME/dev/dotfiles/bin:$HOME/go/bin:$PATH
 export HYPRSHOT_DIR=$HOME/Pictures
    
 

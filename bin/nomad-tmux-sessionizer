@@ -27,7 +27,7 @@ session_setup() {
     # Window 1: nvim
     tmux rename-window -t $session:1 neovim
     tmux send-keys -t $session:1 'nvim .' C-m ' sf'
-    tmux split-window -h -p 25 -t $session:1
+    tmux split-window -h -l 20% -c "$dir" -t $session:1
     tmux send-keys -t $session:1.1 'opencode' C-m
      
     # Window 2: LazyGit
