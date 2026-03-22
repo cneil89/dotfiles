@@ -31,8 +31,7 @@ session_setup() {
     tmux send-keys -t $session:1.1 'opencode' C-m
      
     # Window 2: LazyGit
-    tmux new-window -t $session -n git -c $dir
-    tmux send-keys -t $session:2 'lazygit' C-m
+    tmux new-window -t $session -n scratch -c $dir
 }
 
 main() {
