@@ -71,11 +71,11 @@ ignore_timeout = true
 
 [git_branch]
 format = "[ $branch]($style) "
-style = "fg:lavender"
+style = "fg:green"
 
 [git_status]
 format     = '[$all_status]($style)'
-style      = "bold teal"
+style      = "teal"
 ahead      = "⇡${count} "
 diverged   = "⇕⇡${ahead_count}⇣${behind_count} "
 behind     = "⇣${count} "
