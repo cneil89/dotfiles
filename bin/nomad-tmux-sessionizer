@@ -30,7 +30,10 @@ session_setup() {
     tmux split-window -h -l 20% -c "$dir" -t $session:1
     tmux send-keys -t $session:1.1 'opencode' C-m
      
-    # Window 2: LazyGit
+    # Window 2: DB 
+    tmux new-window -t $session -n db -c $dir
+    tmux send-keys -t $session:2 'pgdev' C-m
+
     tmux new-window -t $session -n scratch -c $dir
 }
 

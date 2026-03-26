@@ -105,7 +105,7 @@
         "tooltip-format-disconnected": "Disconnected",
         "interval": 3,
         "nospacing": 1,
-        "on-click": "ghostty --class=Impala -e impala"
+        "on-click": "ghostty --title=impala -e impala"
 
     },
     "pulseaudio": {
