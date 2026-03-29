@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ $# -ne 1 ]; then
+    echo "specify option [montior, region]"
+    exit 1
+fi
+
+COMMAND=$1
+FOCUSED_MONITOR=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | "\(.x),\(.y) \(.width)x\(.height)"')
+
+case "$COMMAND" in
+    "monitor")
+        grim -g "$FOCUSED_MONITOR" - | satty -f - ;;
+
+    "region")
+        grim -g "$(slurp)" - | satty -f - ;;
+
+    *)
+        echo "invalid option" 
+        exit 1 ;;
+esac
+
+exit 0
