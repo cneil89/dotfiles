@@ -62,6 +62,8 @@ opt.expandtab = true
 
 opt.iskeyword:append("-") -- consider string-string as whole word
 
+opt.winborder = "rounded"
+
 opt.loadplugins = true
 
 local icons = require("config.icons")
