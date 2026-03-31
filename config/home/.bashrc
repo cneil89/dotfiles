@@ -76,7 +76,8 @@ export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
 
-export HYPRSHOT_DIR=$HOME/Pictures
+export GRIM_DEFAULT_DIR=$HOME/screenshots
+export TASK_EXE=task
    
 
 export C=clang
