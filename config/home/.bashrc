@@ -79,7 +79,6 @@ export BAT_THEME=ansi
 export GRIM_DEFAULT_DIR=$HOME/screenshots
 export TASK_EXE=task
    
-
 export C=clang
 export CXX=clang++
 export CMAKE_GENERATOR="Ninja"
@@ -95,3 +94,9 @@ pgdev() {
 
 }
 export GREENLIGHT_DB_DSN="postgres://greenlight:pa55word@localhost:5432/greenlight?sslmode=disable"
+export TASKMASTER_DB_DSN="postgres://taskmaster:pa55word@localhost:5432/taskmaster?sslmode=disable"
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+[[ -r "$HOME/.grok/completions/bash/grok.bash" ]] && source "$HOME/.grok/completions/bash/grok.bash"
+# <<< grok installer <<<
